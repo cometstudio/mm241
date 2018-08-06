@@ -5,11 +5,54 @@
  * Licensed under MIT Open Source
  */
 @import url("https://fonts.googleapis.com/css?familyOpen+Sans:400,400i,700,700i&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&subset=cyrillic");
+.font, body {
+  font-family: 'Open Sans', sans-serif; }
+  .font--big, header .content__text {
+    font-size: 1.5rem;
+    line-height: 1.4em; }
+  .font--medium, .features__content {
+    font-size: 1.3rem;
+    line-height: 1.4em; }
+  .font--normal, body, footer .address {
+    font-size: 1rem;
+    line-height: 1.4em;
+    font-weight: 400; }
+  .font--small, .calculator, .calculator input, .calculator textarea, footer {
+    font-size: 0.9rem;
+    line-height: 1.4em; }
+
+h3 sup {
+  display: block;
+  width: 85px;
+  height: 7px;
+  background: #1600f8; }
+
+.button {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  text-transform: uppercase;
+  background: #6808ee;
+  background: linear-gradient(to right, #6808ee, #b929c7); }
+
+.input-group > :first-child {
+  border-radius: 2rem 0 0 2rem;
+  -moz-border-radius: 2rem 0 0 2rem;
+  -webkit-border-radius: 2rem 0 0 2rem; }
+.input-group > :last-child > * {
+  border-radius: 0 2rem 2rem 0;
+  -moz-border-radius: 0 2rem 2rem 0;
+  -webkit-border-radius: 0 2rem 2rem 0; }
+
 select {
   -webkit-appearance: none; }
 
 section {
-  padding: 2.5rem 0; }
+  padding: 5rem 0; }
 
 header {
   position: relative;
@@ -21,6 +64,18 @@ header {
     color: inherit; }
     header a:hover, header a.active {
       color: #fff784; }
+  header .content {
+    margin-top: 5rem; }
+    header .content sup {
+      display: block;
+      clear: both;
+      overflow: hidden;
+      width: 245px;
+      height: 7px;
+      background: #fefc11; }
+    header .content__text {
+      margin-top: 2.5rem;
+      font-weight: 800; }
 
 .header__overlay {
   position: absolute;
@@ -48,7 +103,113 @@ header {
   .main-menu nav a {
     margin-left: 25px; }
 
-.section--grid {
-  padding: 2.5rem 0 1.5rem; }
+.channel img {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35); }
+.channel .button {
+  margin-top: 1rem; }
+
+.features {
+  background: #11a48a;
+  background: linear-gradient(to top, #32ea7f, #11a48a);
+  color: #fff; }
+  .features h3 sup {
+    background: #fefc4f; }
+  .features__header .column:last-child {
+    margin-top: 1.3rem; }
+  .features__content {
+    text-align: center; }
+  .features__button {
+    padding-top: 5rem; }
+
+.calculator h3 sup {
+  background: #a400d9; }
+.calculator textarea {
+  height: 7em; }
+.calculator__providers {
+  text-align: center; }
+  .calculator__providers span {
+    display: inline-block;
+    width: 31px;
+    height: 30px;
+    margin-top: 1.3rem;
+    background: url("../img/providers.png") no-repeat; }
+  .calculator__providers .megafon span {
+    background-position: -31px 0; }
+  .calculator__providers .mts span {
+    background-position: -62px 0; }
+.calculator__param {
+  padding: 0.5rem 0;
+  font-weight: 600; }
+  .calculator__param:hover {
+    background: #f7f7f7; }
+.calculator__param-comment, .calculator__param-input {
+  font-weight: normal; }
+.calculator__param-comment {
+  padding-left: 1.5rem; }
+.calculator__param-input {
+  text-align: center; }
+  .calculator__param-input input, .calculator__param-input textarea {
+    margin: 0; }
+.calculator__message-length {
+  margin-top: 0.5em;
+  color: #777;
+  width: 100%;
+  text-align: right;
+  font-weight: 600; }
+.calculator__result {
+  margin-top: 2.5rem;
+  font-weight: 600; }
+
+.questions {
+  background: #0082c8;
+  background: linear-gradient(to top, #677db8, #0082c8, #0082c8, #0082c8, #677db8);
+  color: #fff; }
+  .questions h3 sup {
+    background: #fefc4f; }
+  .questions__header {
+    position: relative; }
+    .questions__header img {
+      position: absolute;
+      top: -5rem;
+      right: 0; }
+  .questions__content--bold {
+    font-weight: 600; }
+  .questions__content .column div {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    padding: 1.5rem;
+    background: #0677b9; }
+    .questions__content .column div:hover {
+      background: #fff;
+      color: #333; }
+
+.cases h3 sup {
+  background: #06fe62; }
+.cases__title {
+  font-weight: 600; }
+.cases__content .row {
+  margin-bottom: 50px; }
+
+footer {
+  background: #11a48a;
+  background: linear-gradient(to top, #32ea7f, #11a48a);
+  text-align: center;
+  color: #fff;
+  padding: 5rem 0; }
+  footer img {
+    margin-bottom: 2rem; }
+  footer p {
+    margin-bottom: 0; }
+  footer .address {
+    margin: 2rem 0;
+    font-weight: 600; }
+    footer .address p {
+      margin-bottom: 0.5em; }
+      footer .address p:last-child {
+        margin-bottom: 0; }
 
 /*# sourceMappingURL=app.css.map */

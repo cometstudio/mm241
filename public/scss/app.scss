@@ -1,4 +1,74 @@
 @import "../bower_components/foundation-sites/scss/foundation";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,800&subset=cyrillic');
+
+@mixin shadow(){
+  $h: 6px;
+  box-shadow: 0 $h $h * 2.5 rgba(0,0,0, 0.35);
+  -moz-box-shadow: 0 $h $h * 2.5 rgba(0,0,0, 0.35);
+  -webkit-box-shadow: 0 $h $h * 2.5 rgba(0,0,0, 0.35);
+}
+
+@mixin round($r){
+  border-radius: $r;
+  -moz-border-radius: $r;
+  -webkit-border-radius: $r;
+}
+
+.font{
+  font-family: 'Open Sans', sans-serif;
+  &--big{
+    font-size: 1.5rem;
+    line-height: 1.4em;
+  }
+  &--medium{
+    font-size: 1.3rem;
+    line-height: 1.4em;
+  }
+  &--normal{
+    font-size: 1rem;
+    line-height: 1.4em;
+    font-weight: 400;
+  }
+  &--small{
+    font-size: 0.9rem;
+    line-height: 1.4em;
+  }
+}
+
+body{
+  @extend .font;
+  @extend .font--normal;
+}
+
+h3{
+  sup{
+    display: block;
+    width: 85px;
+    height: 7px;
+    background: $primary-color;
+  }
+}
+
+.button{
+  @include shadow();
+  @include round(2rem);
+
+  text-transform: uppercase;
+  background: #6808ee;
+  background: linear-gradient(to right, #6808ee, #b929c7);
+
+}
+
+.input-group{
+  > :first-child {
+    @include round(2rem 0 0 2rem);
+  }
+  > :last-child {
+    > * {
+      @include round(0 2rem 2rem 0);
+    }
+  }
+}
 
 select{
   -webkit-appearance: none;
@@ -18,6 +88,23 @@ header{
     color: inherit;
     &:hover, &.active{
       color: #fff784;
+    }
+  }
+  .content{
+    margin-top: $global-margin;
+    sup{
+      display: block;
+      clear: both;
+      overflow: hidden;
+      width: 245px;
+      height: 7px;
+      background: #fefc11;
+    }
+    &__text{
+      @extend .font--big;
+
+      margin-top: $global-margin / 2;
+      font-weight: 800;
     }
   }
 }
@@ -57,8 +144,185 @@ header{
   }
 }
 
-.section{
-  &--grid{
-    padding: $global-margin 0 $global-padding;
+.channel{
+  img{
+    @include shadow();
+  }
+  .button{
+    margin-top: $global-padding;
+  }
+}
+
+.features{
+  background: #11a48a;
+  background: linear-gradient(to top, #32ea7f, #11a48a);
+  color: #fff;
+  h3{
+    sup{
+      background: #fefc4f;
+    }
+  }
+  &__header{
+    .column{
+      &:last-child{
+        margin-top: 1.3rem;
+      }
+    }
+  }
+  &__content{
+    @extend .font--medium;
+
+    text-align: center;
+  }
+  &__button{
+    padding-top: $global-margin;
+  }
+
+}
+
+.calculator{
+  @extend .font--small;
+
+  h3{
+    sup{
+      background: #a400d9;
+    }
+  }
+  input, textarea{
+    @extend .font--small;
+  }
+  textarea{
+    height: 5em * 1.4;
+  }
+  &__providers{
+    text-align: center;
+    span{
+      display: inline-block;
+      width: 31px;
+      height: 30px;
+      margin-top: 1.3rem;
+      background: url("../img/providers.png") no-repeat;
+    }
+    .megafon{
+      span{
+        background-position: -31px 0;
+      }
+    }
+    .mts{
+      span{
+        background-position: -62px 0;
+      }
+    }
+  }
+  &__param{
+    padding: rem-calc(8) 0;
+    font-weight: $global-weight-bold;
+    &:hover{
+      background: $light-gray;
+    }
+  }
+  &__param-comment, &__param-input{
+    font-weight: $global-weight-normal;
+  }
+  &__param-comment{
+    padding-left: $form-spacing;
+  }
+  &__param-input{
+    text-align: center;
+    input, textarea{
+      margin: 0;
+    }
+  }
+  &__message-length{
+    margin-top: 0.5em;
+    color: $dark-gray;
+    width: 100%;
+    text-align: right;
+    font-weight: $global-weight-bold;
+  }
+  &__result{
+    margin-top: $global-margin / 2;
+    font-weight: $global-weight-bold;
+  }
+}
+
+.questions{
+  background: #0082c8;
+  background: linear-gradient(to top, #677db8, #0082c8, #0082c8, #0082c8, #677db8);
+  color: #fff;
+  h3{
+    sup{
+      background: #fefc4f;
+    }
+  }
+  &__header{
+    position: relative;
+    img{
+      position: absolute;
+      top: -$global-margin;
+      right: 0;
+    }
+  }
+  &__content{
+    &--bold{
+      font-weight: $global-weight-bold;
+    }
+    .column{
+      div{
+        @include shadow();
+
+        border-radius: 10px;
+        padding: $form-spacing;
+        background: #0677b9;
+        &:hover{
+          background: #fff;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.cases{
+  h3{
+    sup{
+      background: #06fe62;
+    }
+  }
+  &__title{
+    font-weight: $global-weight-bold;
+  }
+  &__content{
+    .row{
+      margin-bottom: 50px;
+    }
+  }
+}
+
+footer{
+  @extend .font--small;
+
+  background: #11a48a;
+  background: linear-gradient(to top, #32ea7f, #11a48a);
+  text-align: center;
+  color: #fff;
+  padding: $global-margin 0;
+  img{
+    margin-bottom: 2rem;
+  }
+  p{
+    margin-bottom: 0;
+  }
+  .address{
+    @extend .font--normal;
+
+    margin: 2rem 0;
+    font-weight: $global-weight-bold;
+    p{
+      margin-bottom: 0.5em;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 }

@@ -70,13 +70,13 @@ $global-font-size: 100%;
 $global-width: rem-calc(1100);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #002a81,
+  primary: #1600f8,
   secondary: #812144,
   success: #3adb76,
   warning: #ffae00,
   alert: #b2002d,
 );
-$light-gray: #e3e3e4;
+$light-gray: #f7f7f7;
 $medium-gray: #bbb;
 $dark-gray: #777;
 $black: #333;
@@ -85,11 +85,11 @@ $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Open Sans', Arial, sans-serif;
 $body-antialiased: true;
-$global-margin: 2.5rem;
-$global-padding: 1.5rem;
-$global-position: 1.5rem;
+$global-margin: rem-calc(80);
+$global-padding: 1rem;
+$global-position: $global-padding;
 $global-weight-normal: normal;
-$global-weight-bold: bold;
+$global-weight-bold: 600;
 $global-radius: rem-calc(3px);
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
@@ -137,7 +137,7 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
 $header-lineheight: 1.4;
-$header-margin-bottom: $global-margin;
+$header-margin-bottom: $global-margin / 2;
 $header-styles: (
   small: (
     'h1': ('font-size': 24),
@@ -148,9 +148,9 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 48),
-    'h2': ('font-size': 40),
-    'h3': ('font-size': 31),
+    'h1': ('font-size': 50),
+    'h2': ('font-size': 46),
+    'h3': ('font-size': 40),
     'h4': ('font-size': 25),
     'h5': ('font-size': 20),
     'h6': ('font-size': 16),
@@ -439,7 +439,7 @@ $input-background-focus: $white;
 $input-background-disabled: $light-gray;
 $input-border: 1px solid $medium-gray;
 $input-border-focus: 1px solid $medium-gray;
-$input-padding: $global-padding / 2;
+$input-padding: $global-padding;
 $input-shadow: none;
 $input-shadow-focus: none;
 $input-cursor-disabled: not-allowed;
